@@ -45,14 +45,11 @@ function SearchBar({ onSubmit }) {
     },
   }));
 
-  const [search, setSearch] = useState();
-
   return (
     <div>
       <Search
         onSubmit={(e) => {
           e.preventDefault();
-          setSearch(`&q=${e.target.search.value}`);
           onSubmit(`&q=${e.target.search.value}`);
         }}
       >

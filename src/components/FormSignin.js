@@ -35,7 +35,6 @@ function FormSignin() {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  console.log(location);
 
   const onSubmit = (data) => {
     setError("afterSubmit", { message: "Server Response Error" });

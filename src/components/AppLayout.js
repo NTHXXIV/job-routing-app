@@ -20,12 +20,12 @@ function AppLayout() {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const boxPerPage = 5;
-  const numberOfPage = 5495 / 5;
+  const numberOfPage = Math.ceil(5495 / boxPerPage);
 
   const [search, setSearch] = useState("");
 
-  const callback = useCallback((search) => {
-    setSearch(search);
+  const callback = useCallback((urlQuery) => {
+    setSearch(urlQuery);
   }, []);
 
   useEffect(() => {
@@ -43,7 +43,6 @@ function AppLayout() {
     fetch();
   }, [page, search]);
 
-  console.log("tés", search);
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
